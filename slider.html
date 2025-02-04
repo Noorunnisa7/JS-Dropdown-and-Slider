@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    
+<center>
+
+<img src="images/img1.jpg"  width="700px" height="400px" name="slider">
+
+<br>
+<br>
+
+
+<button onclick="prev()"> <i class="fa-solid fa-arrow-left"></i>  </button>
+<button onclick="next()"> <i class="fa-solid fa-arrow-right"></i> </button>
+
+</center>
+
+
+</body>
+
+</html>
+
+
+<script>
+
+
+var pics = new Array();
+
+pics[0] = new Image();
+pics[0].src = "images/img1.jpg";
+
+
+pics[1] = new Image();
+pics[1].src = "images/img2.jpg";
+
+
+
+pics[2] = new Image();
+pics[2].src = "images/img3.jpg";
+
+
+
+
+var i = 0 ;
+
+
+
+function next()
+{
+
+     i = i + 1 ;
+
+     if( i > 2)
+     {
+        i = 0;
+
+     }
+
+     document.slider.src  = pics[i].src;
+
+}
+
+
+function prev()
+{
+
+     i = i - 1 ;
+
+     if( i < 0)
+     {
+        i = 2;
+
+     }
+
+     document.slider.src  = pics[i].src;
+
+}
+
+
+setInterval(function() {next()} , 3000);
+
+</script>
